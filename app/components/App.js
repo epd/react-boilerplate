@@ -1,9 +1,8 @@
-import React from 'react';
-import { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { basicAction } from '../actions';
 
-export default class App extends Component {
+class App extends Component {
   componentDidMount() {
     const { dispatch } = this.props.store;
 
@@ -11,6 +10,13 @@ export default class App extends Component {
   }
 
   render() {
-    return <h1>Rendered from ./app/components/App.js!</h1>
+    return <h1>Rendered from ./app/components/App.js!</h1>;
   }
+}
+
+App.propTypes = {
+  store: PropTypes.object.isRequired,
 };
+
+export default App;
+
