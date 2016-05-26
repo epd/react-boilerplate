@@ -4,18 +4,17 @@
   "description": "React boilerplate app. Includes Enzyme and Webpack.",
   "main": "lib/server.js",
   "scripts": {
-    "build": "npm run clean && mkdir -p build && babel app/main.js --out-file build/app.js",
-    "clean": "rm -rf build",
+    "build": "npm run clean && webpack",
+    "dev": "npm run clean && webpack --watch --hot --inline",
+    "clean": "rm -rf build && mkdir -p build",
     "start": "node lib/server",
     "test": "mocha tests/helper.js tests/**/*.js"
   },
   "author": "Evan Dudla <evan@dud.la>",
   "license": "ISC",
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.9.0",
+    "babel-loader": "^6.2.4",
     "babel-preset-airbnb": "^2.0.0",
-    "babel-register": "^6.9.0",
     "enzyme": "^2.3.0",
     "eslint": "^2.10.2",
     "eslint-config-airbnb": "^9.0.1",
@@ -25,13 +24,15 @@
     "expect.js": "^0.3.1",
     "jsdom": "^9.2.0",
     "mocha": "^2.5.2",
-    "react-addons-test-utils": "^15.1.0"
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "webpack": "^1.13.1"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "level": "^1.4.0",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "serve-static": "^1.10.2"
   }
 }
