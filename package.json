@@ -5,8 +5,8 @@
   "main": "lib/server.js",
   "scripts": {
     "build": "npm run clean && webpack",
-    "dev": "npm run clean && webpack --watch --hot --inline",
-    "clean": "rm -rf build && mkdir -p build",
+    "dev": "npm run clean && webpack --watch",
+    "clean": "rm -rf .build && mkdir -p .build",
     "start": "node lib/server",
     "test": "mocha tests/helper.js tests/**/*.js"
   },
@@ -27,6 +27,7 @@
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
+    "redux": "^3.5.2",
     "webpack": "^1.13.1"
   },
   "dependencies": {
