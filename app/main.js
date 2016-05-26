@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+
+import reducers from './reducers';
 import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('main'));
+
+const store = createStore(reducers);
+ReactDOM.render(<App store={store} />, document.getElementById('main'));
